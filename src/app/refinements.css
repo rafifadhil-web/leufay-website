@@ -109,6 +109,149 @@
     transform: none !important;
   }
 }
+
+/* Mobile-only composition corrections. */
+@media (max-width: 760px) {
+  .site-header,
+  main,
+  .footer {
+    max-width: 100%;
+  }
+
+  .hero {
+    min-height: 0;
+    padding-bottom: 42px;
+  }
+
+  .hero-copy h1 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-art {
+    width: calc(100% - 8px);
+    max-width: 100%;
+    height: 365px;
+    margin: 0 auto;
+  }
+
+  .mascot-slot {
+    inset: 36px 16px -14px 20px;
+    max-width: calc(100% - 36px);
+  }
+
+  .floating-label.label-one {
+    left: 2px;
+  }
+
+  .scribble {
+    left: -4px;
+  }
+
+  .welcome .split {
+    gap: 28px;
+  }
+
+  .about-copy h2 {
+    max-width: 100%;
+    font-size: clamp(2.35rem, 11vw, 3.5rem);
+    line-height: .98;
+    overflow-wrap: anywhere;
+  }
+
+  .about-copy,
+  .about-copy > p {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .mini-art {
+    width: 100%;
+    max-width: 340px;
+    height: 285px;
+    margin: 8px auto 0;
+    transform: none;
+    overflow: visible;
+  }
+
+  .mini-art .asset-placeholder {
+    width: 78%;
+    max-width: 265px;
+    height: 88%;
+    margin: 0 auto;
+  }
+
+  .mini-art > span {
+    left: 0;
+    font-size: 5.25rem;
+  }
+
+  .pill-a { left: 0; top: 12%; }
+  .pill-b { right: 0; top: 7%; }
+  .pill-c { left: 0; bottom: 15%; }
+  .pill-d { right: 0; bottom: 10%; }
+
+  .nav-links {
+    max-width: calc(100vw - 32px);
+  }
+
+  .footer .logo-slot img {
+    max-width: 100%;
+  }
+}
+
+/* Final mobile-only About composition guardrails. */
+@media (max-width: 760px) {
+  .welcome .shell,
+  .welcome .split,
+  .about-copy,
+  .mini-art {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .welcome .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mini-art {
+    width: 240px;
+    height: 280px;
+    margin: 42px auto 0;
+    flex: none;
+  }
+
+  .mini-art .asset-placeholder {
+    width: 230px;
+    max-width: 230px;
+    height: 252px;
+    min-height: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .mini-art img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .mini-art > span {
+    left: 2px;
+    top: 28px;
+    font-size: 4.4rem;
+  }
+
+  .pill-a { left: 0; top: 16%; }
+  .pill-b { right: 0; top: 10%; }
+  .pill-c { left: 0; bottom: 13%; }
+  .pill-d { right: 0; bottom: 8%; }
+}
 /* About mascot animation */
 .mini-art img {
   animation: aboutMascotFloat 4s ease-in-out infinite;
