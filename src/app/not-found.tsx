@@ -1,0 +1,2 @@
+import Link from 'next/link'; import { AssetPlaceholder } from '@/components/AssetPlaceholder'; import { SiteFrame } from '@/components/SiteFrame';
+export default function NotFound(){return <SiteFrame><section className="not-found shell"><div><p className="eyebrow">404 · LOST IN THE PANELS</p><h1>Oops... You wandered off the <em>Leufay map.</em></h1><p>Let’s get you back to the good stuff.</p><Link className="button orange" href="/">Return Home →</Link></div><AssetPlaceholder label="MASCOT / confused pose"/></section></SiteFrame>}
