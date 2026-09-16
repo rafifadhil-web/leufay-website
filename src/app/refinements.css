@@ -21,11 +21,12 @@
 }
 
 .nav .logo-slot img {
-  width: 162%;
-  height: 162%;
+  width: 220%;
+  height: 220%;
   max-width: none;
   object-fit: contain;
-  transform: translate(-31%, -31%);
+  object-position: center;
+  transform: none;
 }
 
 .nav .logo-slot {
@@ -37,5 +38,97 @@
 @media (max-width: 760px) {
   .mascot-slot img {
     object-position: center bottom;
+  }
+}
+
+/* Editorial heading lift: intentionally limited to major display text. */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift,
+  .hero h1,
+  .page-hero h1,
+  .shop-callout h1,
+  .shop-callout h2,
+  .final-cta h2,
+  .project-row h2,
+  .project-row h3,
+  .create-card h3,
+  .story h2,
+  .story h3,
+  .brand-grid h2,
+  .contact-layout h2,
+  .not-found h1 {
+    display: inline-block;
+    transform: translateY(0) scale(1);
+    transform-origin: left bottom;
+    transition: transform 200ms ease, text-shadow 200ms ease;
+    will-change: transform;
+  }
+
+  .hover-lift:hover,
+  .hero h1:hover,
+  .page-hero h1:hover,
+  .shop-callout h1:hover,
+  .shop-callout h2:hover,
+  .final-cta h2:hover,
+  .project-row h2:hover,
+  .project-row h3:hover,
+  .create-card h3:hover,
+  .story h2:hover,
+  .story h3:hover,
+  .brand-grid h2:hover,
+  .contact-layout h2:hover,
+  .not-found h1:hover {
+    transform: translateY(-7px) scale(1.025);
+    text-shadow: 0 7px 14px rgba(20, 45, 65, .13);
+  }
+
+  .hero h1 :is(em, i, b):hover {
+    display: inline-block;
+    transform: translateY(-7px) scale(1.03);
+    text-shadow: 0 7px 14px rgba(20, 45, 65, .13);
+    transition: transform 200ms ease, text-shadow 200ms ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-lift,
+  .hero h1,
+  .page-hero h1,
+  .shop-callout h1,
+  .shop-callout h2,
+  .final-cta h2,
+  .project-row h2,
+  .project-row h3,
+  .create-card h3,
+  .story h2,
+  .story h3,
+  .brand-grid h2,
+  .contact-layout h2,
+  .not-found h1 {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+/* About mascot animation */
+.mini-art img {
+  animation: aboutMascotFloat 4s ease-in-out infinite;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+@keyframes aboutMascotFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mini-art img {
+    animation: none;
   }
 }
