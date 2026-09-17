@@ -252,6 +252,211 @@
   .pill-c { left: 0; bottom: 13%; }
   .pill-d { right: 0; bottom: 8%; }
 }
+
+/* Keep the editorial hero stamp legible without changing its composition. */
+.hero-stamp {
+  letter-spacing: .035em;
+  text-shadow: 0 1px 2px rgba(20, 45, 65, .28);
+}
+
+/* Mobile hero composition and layer order only. */
+@media (max-width: 760px) {
+  .nav {
+    align-items: center;
+  }
+
+  .nav .wordmark,
+  .nav .logo-slot,
+  .nav .menu-button {
+    align-self: center;
+  }
+
+  .nav .logo-slot {
+    display: grid;
+    place-items: center;
+    line-height: 0;
+  }
+
+  .nav .logo-slot img {
+    display: block;
+  }
+
+  .hero {
+    gap: 24px;
+  }
+
+  .hero-art {
+    margin-top: 4px;
+    height: 382px;
+    isolation: isolate;
+  }
+
+  .mascot-slot {
+    inset: 50px 18px -6px 22px;
+    z-index: 6;
+  }
+
+  .mascot-slot img {
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .hero-art::after,
+  .sun-disc {
+    z-index: 0;
+  }
+
+  .scribble,
+  .hero-star,
+  .floating-label,
+  .hero-stamp {
+    z-index: 2;
+  }
+
+  .floating-label {
+    max-width: calc(100% - 22px);
+    padding: 5px 8px;
+    font-size: .52rem;
+    line-height: 1.25;
+  }
+
+  .label-one {
+    left: 6px;
+    top: 94px;
+  }
+
+  .label-two {
+    right: 6px;
+    top: 28px;
+  }
+
+  .hero-stamp {
+    right: 8px;
+    bottom: 16px;
+    font-size: .68rem;
+    line-height: 1.25;
+  }
+
+  .scribble {
+    left: 2px;
+    top: 74px;
+    font-size: 5.25rem;
+  }
+
+  .hero-star {
+    right: 12px;
+    bottom: 36px;
+    font-size: 3.65rem;
+  }
+
+  .content-band::after {
+    right: 0;
+    bottom: 15px;
+    font-size: clamp(1.75rem, 8vw, 2.8rem);
+    letter-spacing: -.05em;
+    white-space: nowrap;
+  }
+}
+
+/* Follow the Journey: keep the editorial intro on the section centre line. */
+.social .section-title {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.social .section-title .lede {
+  width: min(100%, 620px);
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* Wordmark stays vertically centred without changing its approved scale. */
+.nav,
+.nav .wordmark {
+  align-items: center;
+}
+
+.nav .logo-slot {
+  align-self: center;
+}
+
+.nav .logo-slot img {
+  align-self: center;
+  transform: translate(-31%, -34%);
+}
+
+@media (max-width: 760px) {
+  .social .section-title .lede {
+    width: min(100%, 34rem);
+    padding-inline: 4px;
+  }
+}
+
+/* Hero foreground hierarchy and natural mascot crop. */
+.hero-art {
+  isolation: isolate;
+}
+
+.mascot-slot {
+  z-index: 6;
+  transform: translateY(14px);
+}
+
+.sun-disc,
+.hero-art::after {
+  z-index: 0;
+}
+
+.floating-label,
+.scribble,
+.hero-star {
+  z-index: 2;
+}
+
+.hero-stamp {
+  right: 22px;
+  bottom: 42px;
+  z-index: 5;
+  font-size: .72rem;
+  line-height: 1.28;
+}
+
+.content-band::after {
+  font-size: clamp(2.3rem, 5.5vw, 5.5rem);
+  line-height: .9;
+}
+
+@media (max-width: 1024px) {
+  .mascot-slot {
+    transform: translateY(11px);
+  }
+
+  .content-band::after {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .mascot-slot {
+    transform: translateY(9px);
+  }
+
+  .hero-stamp {
+    right: 7px;
+    bottom: 23px;
+    z-index: 5;
+    font-size: .64rem;
+    line-height: 1.3;
+  }
+
+  .content-band::after {
+    font-size: clamp(1.55rem, 7vw, 2.35rem);
+    bottom: 13px;
+  }
+}
 /* About mascot animation */
 .mini-art img {
   animation: aboutMascotFloat 4s ease-in-out infinite;
@@ -275,3 +480,150 @@
     animation: none;
   }
 }
+
+/* Final navbar logo alignment */
+.nav .logo-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav .logo-slot img {
+  width: 180%;
+  height: 180%;
+  max-width: none;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+
+/* Remove unwanted hero scribble and decorative frame */
+.hero-art::after {
+  display: none !important;
+}
+
+.hero-art .scribble {
+  display: none !important;
+}
+
+/* Shoppe mascot: clean image presentation */
+.page-shop .asset-placeholder {
+  background: #fffaf4 !important;
+  border: 0 !important;
+}
+
+.page-shop .asset-placeholder img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Mascot layout fixes */
+.mini-art {
+  overflow: visible;
+  min-height: 390px;
+}
+
+.mini-art .asset-placeholder {
+  overflow: hidden;
+  background: #fffaf4;
+}
+
+.mini-art .asset-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+}
+
+.contact-hero {
+  min-height: 430px;
+  padding-right: 340px;
+}
+
+.contact-hero > .asset-placeholder {
+  width: 260px;
+  height: 330px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.contact-hero > .asset-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .mini-art {
+    min-height: 320px;
+  }
+
+  .contact-hero {
+    min-height: 0;
+    padding-right: 0;
+  }
+
+  .contact-hero > .asset-placeholder {
+    width: 100%;
+    height: 320px;
+    margin-top: 28px;
+  }
+}
+
+/* Final fix: About & Contact hero mascot sizing */
+.page-hero > .asset-placeholder {
+  width: 360px;
+  height: 430px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.page-hero > .asset-placeholder img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+}
+
+/* Contact mascot: slightly larger and visually balanced */
+.contact-hero {
+  min-height: 520px;
+  padding-right: 430px;
+}
+
+.contact-hero > .asset-placeholder {
+  width: 360px;
+  height: 430px;
+}
+
+/* About mascot: keep it inside the hero instead of covering the next section */
+.page-hero:not(.contact-hero) > .asset-placeholder {
+  width: 360px;
+  height: 430px;
+  top: 125px;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .page-hero > .asset-placeholder,
+  .page-hero:not(.contact-hero) > .asset-placeholder,
+  .contact-hero > .asset-placeholder {
+    width: 100%;
+    height: 360px;
+    margin-top: 28px;
+  }
+
+  .contact-hero {
+    min-height: 0;
+    padding-right: 0;
+  }
+}
+
